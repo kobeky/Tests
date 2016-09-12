@@ -25,16 +25,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <service android:name="com.amap.api.location.APSService"></service>
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="6d5b0fb7f2a89ffb88cd6b98bae893e7">//开发者申请的key
+
+        </meta-data>
+        <activity android:name=".CalendarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="com.amap.api.location.APSService"></service>
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="6d5b0fb7f2a89ffb88cd6b98bae893e7">//开发者申请的key
+        <activity android:name=".LifeActivity">
 
-        </meta-data>
+        </activity>
     </application>
 
 </manifest>

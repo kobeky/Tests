@@ -3,6 +3,7 @@ package com.example.anzhuo.tests;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
@@ -14,6 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+    TextView tv;
+
     public AMapLocationClient mLocationClient = null;
     public AMapLocationClientOption mLocationOption = null;
 
@@ -21,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tv= (TextView) findViewById(R.id.tv);
+
         mLocationClient=new AMapLocationClient(getApplicationContext());
         mLocationOption=new AMapLocationClientOption();
         mLocationClient.setLocationListener(mLocationListener);
@@ -39,11 +45,16 @@ public class MainActivity extends AppCompatActivity {
         public void onLocationChanged(AMapLocation aMapLocation) {
             if (aMapLocation != null) {
                 if (aMapLocation.getErrorCode() == 0) {
+                    String province=aMapLocation.getProvince();
                    String city= aMapLocation.getCity();
+                    String district=aMapLocation.getDistrict();
+                    String street=aMapLocation.getStreet();
+                    String streetnum=aMapLocation.getStreetNum();
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     Date date = new Date(aMapLocation.getTime());
                     String time=df.format(date);
-                    Toast.makeText(MainActivity.this,city+""+time,Toast.LENGTH_SHORT).show();
+                    tv.setText("你当前位于"+province+city+district+street+streetnum+"\n"+time);
+//                    Toast.makeText(MainActivity.this,"你当前位于"+city+""+time,Toast.LENGTH_LONG).show();
 //可在其中解析amapLocation获取相应内容。
                 }else {
                     //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。

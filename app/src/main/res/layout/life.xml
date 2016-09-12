@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#CDC5BF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/life_tv_calendar"
+            android:drawableTop="@drawable/ic_lifeindex_calendar"
+            android:text="农历"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/life_tv_date"
+            android:drawableTop="@drawable/ic_lifeindex_calendar"
+            android:text="约会指数"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/life_tv_dress"
+            android:drawableTop="@drawable/ic_lifeindex_dress"
+            android:text="穿衣指数"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/life_tv_carwash"
+            android:drawableTop="@drawable/ic_lifeindex_carwash"
+            android:text="洗车指数"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/life_tv_cold"
+            android:drawableTop="@drawable/ic_lifeindex_coldl"
+            android:text="感冒指数"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/life_tv_sport"
+            android:drawableTop="@drawable/ic_lifeindex_sport"
+            android:text="运动指数"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<ListView
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:id="@+id/life_lv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></ListView>
+</LinearLayout>
