@@ -2,10 +2,149 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-<com.squareup.timessquare.CalendarPickerView
-    android:id="@+id/calendar_view"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:background="#00CD00"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/calendar_iv_back"
+                    android:src="@drawable/uac_title_back_new"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="农历"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/calendar_iv_share"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_actionbar_share_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                app:mcv_showOtherDates="out_of_range"
+                app:mcv_selectionColor="#CD9B1D">
+            </com.prolificinteractive.materialcalendarview.MaterialCalendarView>
+            <RelativeLayout
+                android:id="@+id/calendar_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/calendar_tv_day"
+                    android:text="13"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="50sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/calendar_tv_month"
+                    android:layout_below="@+id/calendar_tv_day"
+                    android:text="2016-09"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/calendar_tv_date"
+                    android:textColor="#CD9B1D"
+                    android:layout_toRightOf="@+id/calendar_tv_day"
+                    android:text="农历八月十三"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/calendar_tv_lunaryear"
+                    android:layout_below="@+id/calendar_tv_date"
+                    android:layout_toRightOf="@+id/calendar_tv_month"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="丙申（猴）年"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/calendar_tv_weekday"
+                    android:text="星期二"
+                    android:layout_toRightOf="@+id/calendar_tv_lunaryear"
+                    android:layout_below="@+id/calendar_tv_date"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/calendar_tv_holiday"
+                    android:textColor="#20B2AA"
+                    android:text="中秋节 9月15日至17日放假调休，共3天。9月18日（星期日）上班。"
+                    android:layout_below="@+id/calendar_tv_month"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+<LinearLayout
+    android:layout_marginTop="15dp"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <TextView
+        android:text="宜"
+        android:gravity="center_vertical"
+        android:textSize="40sp"
+        android:textColor="#8B4500"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/calendar_tv_suit"
+        android:gravity="center_vertical"
+        android:textColor="#8B4500"
+        android:text="祭祀.沐浴.修饰垣墙.平治道涂.余事勿取."
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+</LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="忌"
+                    android:gravity="center_vertical"
+                    android:textSize="40sp"
+                    android:textColor="#CD3700"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/calendar_tv_avoid"
+                    android:gravity="center_vertical"
+                    android:textColor="#CD3700"
+                    android:text="嫁娶.入宅.安床.出行."
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
-</com.squareup.timessquare.CalendarPickerView>
 </LinearLayout>

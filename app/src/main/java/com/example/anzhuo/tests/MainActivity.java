@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tv;
+
 
     public AMapLocationClient mLocationClient = null;
     public AMapLocationClientOption mLocationOption = null;
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv= (TextView) findViewById(R.id.tv);
+
 
         mLocationClient=new AMapLocationClient(getApplicationContext());
         mLocationOption=new AMapLocationClientOption();
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     Date date = new Date(aMapLocation.getTime());
                     String time=df.format(date);
-                    tv.setText("你当前位于"+province+city+district+street+streetnum+"\n"+time);
+
 //                    Toast.makeText(MainActivity.this,"你当前位于"+city+""+time,Toast.LENGTH_LONG).show();
 //可在其中解析amapLocation获取相应内容。
                 }else {
