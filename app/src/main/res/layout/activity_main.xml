@@ -13,6 +13,7 @@
         android:layout_weight="1"></FrameLayout>
 
     <RadioGroup
+        android:id="@+id/main_rg_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -24,6 +25,7 @@
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
+            android:checked="true"
             android:text="天气" />
 
         <RadioButton

@@ -10,11 +10,13 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/home_ib_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/message_add_background" />
 
         <TextView
+            android:id="@+id/home_tv_city"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -24,6 +26,7 @@
             android:textSize="20sp" />
 
         <ImageButton
+            android:id="@+id/home_ib_share"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/radar_card_share_btn_bg" />
@@ -41,7 +44,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></LinearLayout>
+                android:layout_height="360dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""/>
+            </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -98,7 +107,7 @@
 
                 <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="40dp"
                     android:layout_weight="1">
 
                     <ImageView
@@ -115,7 +124,6 @@
                         android:text="25～32" />
 
                     <TextView
-                        android:id="@+id/home_tv_today"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -125,7 +133,7 @@
 
                 <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="40dp"
                     android:layout_weight="1">
 
                     <ImageView
@@ -142,7 +150,6 @@
                         android:text="25～32" />
 
                     <TextView
-                        android:id="@+id/home_tv_tomorrow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -151,57 +158,164 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="24小时天气" />
+
+            <Gallery
+                android:id="@+id/home_gallery_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Gallery>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="空气质量" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/home_chart_air"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="天气详情" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="15dp"
-                    android:text="24小时天气" />
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/home_iv_ss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/home_tv_somatosensory" />
+
+                    <TextView
+                        android:id="@+id/home_tv_somatosensory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="体感" />
+
+                    <TextView
+                        android:id="@+id/home_tv_ssNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/home_tv_somatosensory"
+                        android:text="27" />
+
+                    <ImageView
+                        android:id="@+id/home_iv_tp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/home_tv_temperatureNum" />
+
+                    <TextView
+                        android:id="@+id/home_tv_temperatureNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/home_tv_somatosensory"
+                        android:text="温度" />
+
+                    <TextView
+                        android:id="@+id/home_tv_tpNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/home_tv_temperatureNum"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/home_tv_temperatureNum"
+                        android:text="32" />
+
+                    <ImageView
+                        android:id="@+id/home_iv_vb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/home_tv_visible" />
+
+                    <TextView
+                        android:id="@+id/home_tv_visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/home_tv_temperatureNum"
+                        android:text="可见" />
+
+                    <TextView
+                        android:id="@+id/home_tv_vbNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/home_tv_visible"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/home_tv_visible"
+                        android:text="5km" />
+
+                    <ImageView
+                        android:id="@+id/home_iv_ps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/home_tv_pressure" />
+
+                    <TextView
+                        android:id="@+id/home_tv_pressure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/home_tv_visible"
+                        android:text="气压" />
+
+                    <TextView
+                        android:id="@+id/home_tv_psNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/home_tv_pressure"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/home_tv_pressure"
+                        android:text="101kPa" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="未来一周天气" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
                 <Gallery
-                    android:id="@+id/home_gallery"
+                    android:id="@+id/home_gallery_day"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
+
                 </Gallery>
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/home_chart_week"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="空气质量" />
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical" />
+            </FrameLayout>
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="天气详情" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="未来一周天气" />
-            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

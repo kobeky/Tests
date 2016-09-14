@@ -12,9 +12,27 @@ android {
         versionName "1.0"
     }
     buildTypes {
+        debug {
+
+                minifyEnabled false
+                zipAlignEnabled false
+                shrinkResources false
+                signingConfig signingConfigs.debug
+
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
         }
     }
 }
@@ -25,5 +43,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile files('libs/AMap_Location_V2.9.0_20160906.jar')
     compile 'com.squareup:android-times-square:1.6.5@aar'//日历
-    compile 'com.prolificinteractive:material-calendarview:1.4.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'//绘图
 }

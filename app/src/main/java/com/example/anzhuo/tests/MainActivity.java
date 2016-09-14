@@ -1,68 +1,66 @@
 package com.example.anzhuo.tests;
 
+
+import android.os.Handler;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.FrameLayout;
+import android.widget.RadioGroup;
 
-import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationClient;
-import com.amap.api.location.AMapLocationClientOption;
-import com.amap.api.location.AMapLocationListener;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+FrameLayout frameLayout;
+HomePage homePage;
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+    RadioGroup radioGroup;
 
 
-    public AMapLocationClient mLocationClient = null;
-    public AMapLocationClientOption mLocationOption = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-        mLocationClient=new AMapLocationClient(getApplicationContext());
-        mLocationOption=new AMapLocationClientOption();
-        mLocationClient.setLocationListener(mLocationListener);
-        mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
-        mLocationOption.setOnceLocationLatest(true);
-        mLocationOption.setNeedAddress(true);
-        mLocationOption.setWifiActiveScan(false);
-        mLocationOption.setMockEnable(false);
-        AMapLocationClientOption.setLocationProtocol(AMapLocationClientOption.AMapLocationProtocol.HTTP);
-        mLocationClient.setLocationOption(mLocationOption);
-        mLocationClient.startLocation();
-
-    }
-    public AMapLocationListener mLocationListener = new AMapLocationListener() {
-        @Override
-        public void onLocationChanged(AMapLocation aMapLocation) {
-            if (aMapLocation != null) {
-                if (aMapLocation.getErrorCode() == 0) {
-                    String province=aMapLocation.getProvince();
-                   String city= aMapLocation.getCity();
-                    String district=aMapLocation.getDistrict();
-                    String street=aMapLocation.getStreet();
-                    String streetnum=aMapLocation.getStreetNum();
-                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    Date date = new Date(aMapLocation.getTime());
-                    String time=df.format(date);
-
-//                    Toast.makeText(MainActivity.this,"你当前位于"+city+""+time,Toast.LENGTH_LONG).show();
-//可在其中解析amapLocation获取相应内容。
-                }else {
-                    //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
-                    Log.i("AmapError","location Error, ErrCode:"
-                            + aMapLocation.getErrorCode() + ", errInfo:"
-                            + aMapLocation.getErrorInfo());
+        radioGroup= (RadioGroup) findViewById(R.id.main_rg_group);
+        frameLayout= (FrameLayout) findViewById(R.id.fl);
+        showFragment(0);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.rb_home:
+                       showFragment(0);
+                        break;
                 }
             }
+        });
+
+
+    }
+    private  void showFragment(int i){
+        fragmentManager=getSupportFragmentManager();
+        fragmentTransaction=fragmentManager.beginTransaction();
+        HideTransaction(fragmentTransaction);
+        switch (i){
+            case 0:
+                if (homePage==null){
+                    homePage=new HomePage();
+                    fragmentTransaction.add(R.id.fl,homePage);
+                }else {
+                    fragmentTransaction.show(homePage);
+                }
+            break;
         }
-    };
+        fragmentTransaction.commit();
+    }
+
+    private void HideTransaction(FragmentTransaction fragmentTransaction) {
+        if (homePage!=null){
+            fragmentTransaction.hide(homePage);
+        }
+    }
 }
