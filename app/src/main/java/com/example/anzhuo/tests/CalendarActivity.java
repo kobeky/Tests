@@ -18,13 +18,13 @@ public class CalendarActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calendar);
-        calendarPickerView= (CalendarPickerView) findViewById(R.id.calendar_view);
-        Calendar nextYear=Calendar.getInstance();
-
-        nextYear.add(Calendar.YEAR,2);
-        Date today=new Date();
-        calendarPickerView.init(today,nextYear.getTime()).withSelectedDate(today);
+//        setContentView(R.layout.calendar);
+//        calendarPickerView= (CalendarPickerView) findViewById(R.id.calendar_view);
+//        Calendar nextYear=Calendar.getInstance();
+//
+//        nextYear.add(Calendar.YEAR,2);
+//        Date today=new Date();
+//        calendarPickerView.init(today,nextYear.getTime()).withSelectedDate(today);
 //        calendarPickerView.init(today,nextYear.getTime()).inMode(CalendarPickerView.SelectionMode.RANGE);
 
 

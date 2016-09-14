@@ -10,11 +10,13 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/home_ib_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/message_add_background" />
 
         <TextView
+            android:id="@+id/home_tv_city"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -24,6 +26,7 @@
             android:textSize="20sp" />
 
         <ImageButton
+            android:id="@+id/home_ib_share"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/radar_card_share_btn_bg" />
@@ -104,7 +107,7 @@
 
                 <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="40dp"
                     android:layout_weight="1">
 
                     <ImageView
@@ -130,7 +133,7 @@
 
                 <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="40dp"
                     android:layout_weight="1">
 
                     <ImageView
@@ -162,7 +165,7 @@
                 android:text="24小时天气" />
 
             <Gallery
-                android:id="@+id/home_gallery"
+                android:id="@+id/home_gallery_hour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></Gallery>
 
@@ -300,6 +303,7 @@
                 android:layout_height="wrap_content">
 
                 <Gallery
+                    android:id="@+id/home_gallery_day"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 

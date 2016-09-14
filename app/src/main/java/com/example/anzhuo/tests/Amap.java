@@ -21,6 +21,7 @@ public class Amap {
      AMapLocationClient mLocationClient=null;
      AMapLocationClientOption mLocationOption=null;
     Context context;
+    String city;
     public  Amap(Context context){
         this.context=context;
     }
@@ -30,13 +31,9 @@ public class Amap {
             public void onLocationChanged(AMapLocation aMapLocation) {
                 if (aMapLocation != null) {
                     if (aMapLocation.getErrorCode() == 0) {
-                        String province=aMapLocation.getProvince();
-                        String city= aMapLocation.getCity();
+                        city= aMapLocation.getCity();
+                        Log.i("LM","1344");
                         handler.sendMessage(Message.obtain(handler,0,city));
-                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                        Date date = new Date(aMapLocation.getTime());
-                        String time=df.format(date);
-                        Toast.makeText(context,province+city+time,Toast.LENGTH_SHORT).show();
                     }else {
                         //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
                         Log.i("AmapError","location Error, ErrCode:"
