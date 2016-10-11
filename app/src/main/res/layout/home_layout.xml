@@ -40,13 +40,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@mipmap/bg_na">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
                 >
                 <TextView
+                    android:id="@+id/tv1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text=""/>
@@ -157,29 +159,6 @@
                         android:text="明天" />
                 </RelativeLayout>
             </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:text="24小时天气" />
-
-            <Gallery
-                android:id="@+id/home_gallery_hour"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></Gallery>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:text="空气质量" />
-
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/home_chart_air"
-                android:layout_width="match_parent"
-                android:layout_height="80dp" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -291,30 +270,25 @@
                         android:text="101kPa" />
                 </RelativeLayout>
             </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="15dp"
-                android:text="未来一周天气" />
+                android:text="未来一周天气温度趋势线" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/home_chart_week"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical" />
 
-                <Gallery
-                    android:id="@+id/home_gallery_day"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/tv_particulars_home"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:text="未来一周天气详情"/>
 
-                </Gallery>
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/home_chart_week"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_vertical" />
-            </FrameLayout>
 
         </LinearLayout>
 

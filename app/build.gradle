@@ -10,6 +10,8 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+
     }
     buildTypes {
         debug {
@@ -40,8 +42,13 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile files('libs/AMap_Location_V2.9.0_20160906.jar')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.google.code.gson:gson:2.4'//gson解析
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'//网络请求
+    compile files('libs/AMap_Location_V2.9.0_20160906.jar')//高德地图
     compile 'com.squareup:android-times-square:1.6.5@aar'//日历
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'//绘图
+    compile 'in.srain.cube:ultra-ptr:1.0.11'//下拉刷新
+//    compile 'com.qiushui:blurredview:0.8.1'//高斯模糊
 }
