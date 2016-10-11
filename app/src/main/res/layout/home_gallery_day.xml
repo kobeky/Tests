@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:id="@+id/day_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="date" />
+        <TextView
+            android:id="@+id/day_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time"/>
+        <TextView
+            android:id="@+id/day_tv_formD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="info"/>
+        <ImageView
+            android:id="@+id/day_iv_formD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/w0"/>
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/day_iv_formN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/w1"/>
+    <TextView
+        android:id="@+id/day_tv_formN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="info"/>
+    <TextView
+        android:id="@+id/day_tv_widr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="widr"/>
+    <TextView
+        android:id="@+id/day_tv_sc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2级"/>
+</LinearLayout>
+
+
+</RelativeLayout>

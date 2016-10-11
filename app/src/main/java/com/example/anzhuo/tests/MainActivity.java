@@ -1,6 +1,7 @@
 package com.example.anzhuo.tests;
 
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,11 +10,13 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
+import com.example.anzhuo.tests.info.GvInfo;
 
 
 public class MainActivity extends AppCompatActivity {
 FrameLayout frameLayout;
-HomePage homePage;
+//HomePage homePage;
+    HomeFragment homeFragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     RadioGroup radioGroup;
@@ -24,6 +27,8 @@ HomePage homePage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
         radioGroup= (RadioGroup) findViewById(R.id.main_rg_group);
         frameLayout= (FrameLayout) findViewById(R.id.fl);
@@ -41,17 +46,20 @@ HomePage homePage;
 
 
     }
+
+
+
     private  void showFragment(int i){
         fragmentManager=getSupportFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
         HideTransaction(fragmentTransaction);
         switch (i){
             case 0:
-                if (homePage==null){
-                    homePage=new HomePage();
-                    fragmentTransaction.add(R.id.fl,homePage);
+                if (homeFragment==null){
+                   homeFragment=new HomeFragment();
+                    fragmentTransaction.add(R.id.fl,homeFragment);
                 }else {
-                    fragmentTransaction.show(homePage);
+                    fragmentTransaction.show(homeFragment);
                 }
             break;
         }
@@ -59,8 +67,9 @@ HomePage homePage;
     }
 
     private void HideTransaction(FragmentTransaction fragmentTransaction) {
-        if (homePage!=null){
-            fragmentTransaction.hide(homePage);
+        if (homeFragment!=null){
+            fragmentTransaction.hide(homeFragment);
         }
     }
+
 }
