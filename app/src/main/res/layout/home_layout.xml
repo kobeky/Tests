@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +13,8 @@
         <ImageButton
             android:id="@+id/home_ib_add"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@null"
             android:src="@drawable/message_add_background" />
 
         <TextView
@@ -23,13 +25,14 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="city"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/home_ib_share"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:src="@drawable/radar_card_share_btn_bg" />
+             />
     </LinearLayout>
 
     <ScrollView
@@ -41,11 +44,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@mipmap/bg_na">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="360dp"
+                android:layout_height="380dp"
                 >
                 <TextView
                     android:id="@+id/tv1"
@@ -64,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:text="29"
+                    android:textColor="#ffffff"
                     android:textSize="80sp" />
 
                 <TextView
@@ -72,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/home_tv_temperature"
                     android:layout_marginBottom="18dp"
+                    android:textColor="#ffffff"
                     android:layout_toRightOf="@+id/home_tv_temperature"
                     android:text="多云" />
 
@@ -82,6 +87,7 @@
                     android:layout_below="@+id/home_tv_info"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
+                    android:textColor="#ffffff"
                     android:text="2级" />
 
                 <TextView
@@ -90,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/home_tv_info"
                     android:layout_marginLeft="5dp"
+                    android:textColor="#ffffff"
                     android:layout_toRightOf="@+id/home_tv_windDirection"
                     android:text="天气不错哦，出去走走吧！" />
 
@@ -99,6 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="40dp"
+                    android:textColor="#ffffff"
                     android:text="空气指数" />
             </RelativeLayout>
 
@@ -108,6 +116,8 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawlines"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1">
@@ -122,6 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_iv_info"
                         android:text="25～32" />
 
@@ -129,11 +140,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_tv_temperature_range"
                         android:text="今天" />
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:background="@drawable/drawlines"
+                    android:layout_margin="10dp"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1">
@@ -148,6 +162,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_iv_infoT"
                         android:text="25～32" />
 
@@ -155,14 +170,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_tv_temperature_rangeT"
                         android:text="明天" />
                 </RelativeLayout>
             </LinearLayout>
+            <!--<View-->
+                <!--android:background="#CD950C"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"/>-->
+
+
             <TextView
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="15dp"
+                android:textColor="#ffffff"
                 android:text="天气详情" />
 
             <LinearLayout
@@ -171,13 +195,17 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:background="@drawable/drawlines"
+                    android:layout_margin="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
-
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:padding="10dp"
+                    android:background="@drawable/drawlines"
+                    android:layout_margin="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -193,6 +221,7 @@
                         android:id="@+id/home_tv_somatosensory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="体感" />
 
                     <TextView
@@ -200,6 +229,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_tv_somatosensory"
                         android:text="27" />
 
@@ -210,9 +240,11 @@
                         android:layout_toLeftOf="@+id/home_tv_temperatureNum" />
 
                     <TextView
+                        android:layout_marginTop="10dp"
                         android:id="@+id/home_tv_temperatureNum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:layout_below="@+id/home_tv_somatosensory"
                         android:text="温度" />
 
@@ -222,6 +254,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/home_tv_temperatureNum"
                         android:layout_marginLeft="30dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_tv_temperatureNum"
                         android:text="32" />
 
@@ -233,9 +266,11 @@
 
                     <TextView
                         android:id="@+id/home_tv_visible"
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/home_tv_temperatureNum"
+                        android:textColor="#ffffff"
                         android:text="可见" />
 
                     <TextView
@@ -244,6 +279,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/home_tv_visible"
                         android:layout_marginLeft="30dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_tv_visible"
                         android:text="5km" />
 
@@ -255,8 +291,10 @@
 
                     <TextView
                         android:id="@+id/home_tv_pressure"
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:layout_below="@id/home_tv_visible"
                         android:text="气压" />
 
@@ -266,6 +304,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/home_tv_pressure"
                         android:layout_marginLeft="30dp"
+                        android:textColor="#ffffff"
                         android:layout_toRightOf="@+id/home_tv_pressure"
                         android:text="101kPa" />
                 </RelativeLayout>
@@ -273,13 +312,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:paddingLeft="15dp"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
                 android:text="未来一周天气温度趋势线" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/home_chart_week"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="120dp"
         android:layout_gravity="center_vertical" />
 
 <TextView
@@ -287,6 +329,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="15dp"
+    android:textSize="25sp"
+    android:textColor="#ffffff"
     android:text="未来一周天气详情"/>
 
 

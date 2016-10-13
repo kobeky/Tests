@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/history_title"
+    android:text="农民起义"
+    android:textColor="#3B3B3B"
+    android:layout_margin="10dp"
+    android:textSize="25sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+<com.facebook.drawee.view.SimpleDraweeView
+    android:layout_below="@+id/history_title"
+    android:id="@+id/history_pic"
+    android:layout_margin="10dp"
+    fresco:placeholderImage="@drawable/qiku_progressbar_loading"
+    android:layout_width="220dp"
+    android:layout_height="200dp" />
+    <TextView
+        android:layout_toRightOf="@+id/history_pic"
+        android:layout_below="@+id/history_title"
+        android:layout_marginTop="20dp"
+        android:id="@+id/history_content"
+        android:text="农民起义了"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

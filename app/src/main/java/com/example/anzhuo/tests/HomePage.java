@@ -27,7 +27,6 @@ public class HomePage extends Fragment{
     List<Entry>entriesN=new ArrayList<>();
     TextView city;//城市
     ImageButton add;//添加城市
-    ImageButton share;//分享
     TextView temperature;//温度
     TextView info;//天气状态
     TextView windDirection;//风向
@@ -48,7 +47,7 @@ TextView tv_particulars;
         View view = inflater.inflate(R.layout.home_layout,container,false);
         city = (TextView) view.findViewById(R.id.home_tv_city);
         add = (ImageButton) view.findViewById(R.id.home_ib_add);
-        share = (ImageButton) view.findViewById(R.id.home_ib_share);
+
         temperature = (TextView) view.findViewById(R.id.home_tv_temperature);
         tem = (TextView) view.findViewById(R.id.home_tv_tpNum);
         temperatureRange = (TextView) view.findViewById(R.id.home_tv_temperature_range);
@@ -90,12 +89,7 @@ TextView tv_particulars;
                 startActivityForResult(intent,10);
             }
         });
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                share.setImageBitmap(Screen.takeScreenShot(getActivity()));
-            }
-        });
+
         tv_particulars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -8,12 +8,14 @@
 
     <FrameLayout
         android:id="@+id/fl"
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"></FrameLayout>
 
     <RadioGroup
         android:id="@+id/main_rg_group"
+        android:background="#515151"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -26,16 +28,20 @@
             android:button="@null"
             android:gravity="center"
             android:checked="true"
-            android:text="天气" />
+            android:drawableTop="@drawable/weatherchoose"
+            android:text="天气"
+            android:textColor="@color/textcolor"/>
 
         <RadioButton
             android:id="@+id/rb_life"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:drawableTop="@drawable/lifechoose"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:text="生活" />
+            android:text="生活"
+            android:textColor="@color/textcolor"/>
 
         <RadioButton
             android:id="@+id/rb_me"
@@ -44,6 +50,8 @@
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:text="我" />
+            android:drawableTop="@drawable/mechoose"
+            android:text="我"
+            android:textColor="@color/textcolor"/>
     </RadioGroup>
 </LinearLayout>

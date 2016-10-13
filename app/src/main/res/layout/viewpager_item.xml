@@ -8,7 +8,7 @@
             android:id="@+id/iv_form_viewPager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/w1"/>
         <TextView
