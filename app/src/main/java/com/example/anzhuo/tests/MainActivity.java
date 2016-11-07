@@ -28,7 +28,6 @@ HomeFragment homeFragment;
 String name="";
     String uri="";
     String nick="";
-ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

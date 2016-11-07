@@ -1,6 +1,7 @@
 package com.example.anzhuo.tests;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,9 +18,10 @@ public class SetTime_Activity extends AppCompatActivity implements OnClickListen
     private ImageButton settime_Confirm;
     private String settime_Time;
     private String settime_Minute;
+    private SharedPreferences sharedPreferences;
 
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settime_activity);
         timePicker = (TimePicker) findViewById(R.id.settime_TimePicker);
@@ -46,6 +48,11 @@ public class SetTime_Activity extends AppCompatActivity implements OnClickListen
                 finish();
                 break;
             case R.id.settime_Confirm:
+                sharedPreferences = getSharedPreferences("SetTime", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("settime_Time", Integer.parseInt(settime_Time));
+                editor.putInt("settime_Minute", Integer.parseInt(settime_Minute));
+                editor.commit();
                 settime_Time = String.valueOf(timePicker.getCurrentHour());
                 settime_Minute = String.valueOf(timePicker.getCurrentMinute());
                 Intent intent = new Intent(SetTime_Activity.this, Timing_Activity.class);

@@ -19,7 +19,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/back"
+                android:background="@null" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -33,7 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/change_ok"
+                android:background="@null"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -50,13 +52,13 @@
     </RelativeLayout>
 
     <ImageButton
-        android:id="@+id/removetime_ib_imageButton"
+        android:id="@+id/removetime_ib_Remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/removetime_tv_Remove"
         android:layout_centerHorizontal="true"
         android:background="#00000000"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/ad_close_blue_press" />
 
     <TextView
         android:id="@+id/removetime_tv_Remove"

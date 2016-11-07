@@ -15,35 +15,35 @@ public class FormSetImage {
         }else if (string.equals("阴")){
             view.setImageResource(R.drawable.w2);
         }else if (string.equals("小雨")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w7);
         }else if (string.equals("中雨")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w8);
         }else if (string.equals("大雨")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w8);
         }else if (string.equals("暴雨")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w8);
         }else if (string.equals("大暴雨")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w8);
         }else if (string.equals("雾")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w20);
         }else if (string.equals("霾")){
-            view.setImageResource(R.drawable.w0);
-        }else if (string.equals("雷阵雨")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w45);
+        }else if (string.equals("阵雨")){
+            view.setImageResource(R.drawable.w4);
         }else if (string.equals("冰雹")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w15);
         }else if (string.equals("小雪")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w16);
         }else if (string.equals("中雪")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w17);
         }else if (string.equals("大雪")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w17);
         }else if (string.equals("暴雪")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w17);
         }else if (string.equals("大暴雪")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w17);
         } else if (string.equals("雨夹雪")){
-            view.setImageResource(R.drawable.w0);
+            view.setImageResource(R.drawable.w6);
         }
     }
 }

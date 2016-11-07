@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -42,14 +43,13 @@ public class Compile extends AppCompatActivity {
         weather=new Weather();
         adapter=new GvAdapter(this,list);
         view_addCity.setAdapter(adapter);
+
 iv_back.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-
         finish();
     }
 });
-
         view_addCity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -57,21 +57,22 @@ iv_back.setOnClickListener(new View.OnClickListener() {
                     Intent intent = new Intent(getApplicationContext(), AddCity.class);
                     startActivityForResult(intent, RQ);
                 }else{
-                    setResult(RESULT_OK,new Intent().putExtra("gvInfo",list.get(i)).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
-
+                    Intent intent=new Intent();
+                    intent.setAction("com.example.anzhuo.tests.CityName");
+                    intent.putExtra("gvInfo",list.get(i));
+                    getApplicationContext().sendBroadcast(intent);
+                    Log.i("LM","cityName:"+list.get(i).getCityName()+"......");
+                    finish();
                 }
-
             }
         });
         view_addCity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i<list.size()) {
-
                     if (isShowDelete) {//删除图片显示时长按隐藏
                         isShowDelete = false;
                         adapter.setIsShowDelete(isShowDelete);
-
                     } else {//删除图片隐藏式长按显示
                         isShowDelete = true;
                         adapter.setIsShowDelete(isShowDelete);
@@ -80,9 +81,7 @@ iv_back.setOnClickListener(new View.OnClickListener() {
                 return true;
             }
         });
-
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -90,7 +89,6 @@ iv_back.setOnClickListener(new View.OnClickListener() {
             str=data.getStringExtra("city");
             weather.setWeather(handler,str);
         }
-
     }
     Handler handler=new Handler(){
         @Override
@@ -108,5 +106,4 @@ iv_back.setOnClickListener(new View.OnClickListener() {
             }
         }
     };
-
 }

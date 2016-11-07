@@ -21,8 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="#00000000"
-            android:drawableRight="@mipmap/ic_launcher"
             android:textOff=""
             android:textOn="" />
     </RelativeLayout>

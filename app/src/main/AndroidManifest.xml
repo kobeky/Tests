@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.anzhuo.tests">
 
-    <uses-permission  android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
 
-    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <!--用于进行网络定位-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
@@ -30,55 +30,51 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
         </activity>
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Inform_Activity"></activity>
         <service android:name="com.amap.api.location.APSService"></service>
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="ecb7dcceb8df7351665aa851ad5757c5">//开发者申请的key
-
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="ecb7dcceb8df7351665aa851ad5757c5">//开发者申请的key
         </meta-data>
         <activity android:name=".base_activity.CalendarActivity">
-
         </activity>
-
         <activity android:name=".base_activity.CarWash">
-
         </activity>
         <activity android:name=".base_activity.TravelActivity">
-
         </activity>
         <activity android:name=".base_activity.ColdActivity">
-
         </activity>
         <activity android:name=".base_activity.SportsActivity">
-
         </activity>
         <activity android:name=".base_activity.RaysActivity">
-
         </activity>
         <activity android:name=".base_activity.HistoryToday">
-
         </activity>
         <activity android:name=".base_activity.DressIndex">
-
         </activity>
         <activity android:name=".UserLogin">
-
         </activity>
         <activity android:name=".UserRegist">
-
         </activity>
+        <activity android:name=".RemoveTime_Activity"></activity>
+        <activity android:name=".Timing_Activity"></activity>
+        <activity android:name=".Me_Activity">
+        </activity>
+        <activity android:name=".SetTime_Activity"></activity>
         //qq登录，分享
+        <service android:name=".Switch1_Service"></service>
+        <service android:name=".Switch2_Service"></service>
         <activity
             android:name="com.tencent.tauth.AuthActivity"
-            android:noHistory="true"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -86,17 +82,15 @@
                 <data android:scheme="tencent1105679018" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.tencent.connect.common.AssistActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            />
-        <category android:name="android.intent.category.LAUNCHER"/>
-        <activity android:name=".ParticularsActivity">
-
-        </activity>
-        <activity android:name=".Compile" android:launchMode="singleTop"></activity>
-        <activity android:name=".AddCity" android:launchMode="singleTop"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <activity android:name=".ParticularsActivity"></activity>
+        <activity
+            android:name=".Compile"
+            android:launchMode="singleTask"></activity>
+        <activity android:name=".AddCity"></activity>
     </application>
-
 </manifest>

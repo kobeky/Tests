@@ -41,13 +41,15 @@ public class HomePage extends Fragment{
     TextView visible;//可见度
     TextView pressure;//气压
 TextView tv_particulars;
+    TextView tv_content;
+    TextView tv_sr;
+    TextView tv_ss;
     @Nullable
 
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_layout,container,false);
         city = (TextView) view.findViewById(R.id.home_tv_city);
         add = (ImageButton) view.findViewById(R.id.home_ib_add);
-
         temperature = (TextView) view.findViewById(R.id.home_tv_temperature);
         tem = (TextView) view.findViewById(R.id.home_tv_tpNum);
         temperatureRange = (TextView) view.findViewById(R.id.home_tv_temperature_range);
@@ -61,7 +63,10 @@ TextView tv_particulars;
         somatosensory = (TextView) view.findViewById(R.id.home_tv_ssNum);
         visible = (TextView) view.findViewById(R.id.home_tv_vbNum);
         pressure = (TextView) view.findViewById(R.id.home_tv_psNum);
+        tv_content= (TextView) view.findViewById(R.id.home_tv_content);
         tv_particulars= (TextView) view.findViewById(R.id.tv_particulars_home);
+        tv_sr= (TextView) view.findViewById(R.id.tv_sr_home);
+        tv_ss= (TextView) view.findViewById(R.id.tv_ss_home);
         refresh();
         LineDataSet dataSet=new LineDataSet(entries,"");
         dataSet.setColor(R.color.colorPrimaryDark);
@@ -81,12 +86,11 @@ TextView tv_particulars;
         xAxis.setDrawGridLines(false);
         week.getAxisRight().setEnabled(false);
         week.getAxisLeft().setEnabled(false);
-        week.animateX(1500);
+        week.animateX(5000);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),Compile.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
-                startActivityForResult(intent,10);
+                startActivity(new Intent(getContext(),Compile.class));
             }
         });
 
@@ -102,15 +106,56 @@ TextView tv_particulars;
     }
     public  void refresh(){
         HeBean.HeWeather Bean= (HeBean.HeWeather) getArguments().getSerializable("bean");
-        temperature.setText(Bean.getNow().getTmp()+"°");
-        tem.setText(Bean.getNow().getTmp()+"°");
-        somatosensory.setText(Bean.getNow().getFl());
-        visible.setText(Bean.getNow().getVis());
-        info.setText(Bean.getNow().getCond().getTxt());
-        windDirection.setText(Bean.getNow().getWind().getDir());
-        pressure.setText(Bean.getNow().getPres());
-        aeration.setText(Bean.getAqi().getCity().getAqi());
+        if (Bean.getNow().getTmp()!=null){
+            temperature.setText(Bean.getNow().getTmp()+"°");
+            tem.setText(Bean.getNow().getTmp()+"°");
+        }else {
+            temperature.setText("暂无数据");
+            tem.setText("暂无数据");
+        }if (Bean.getNow().getFl()!=null){
+            somatosensory.setText(Bean.getNow().getFl()+"°");
+        }else {
+            somatosensory.setText("暂无数据");
+        }if (Bean.getNow().getVis()!=null){
+            visible.setText(Bean.getNow().getVis()+"km");
+        }else {
+            visible.setText("暂无数据");
+        }if (Bean.getNow().getCond()!=null){
+            info.setText(Bean.getNow().getCond().getTxt());
+        }else {
+            info.setText("暂无数据");
+        }if (Bean.getNow().getWind().getDir()!=null){
+            windDirection.setText(Bean.getNow().getWind().getDir());
+        }else {
+            windDirection.setText("暂无数据");
+        }if (Bean.getNow().getPres()!=null){
+            pressure.setText(Bean.getNow().getPres()+"hPa");
+        }else {
+            pressure.setText("暂无数据");
+        }if(Bean.getAqi().getCity().getAqi()!=null){
+            aeration.setText("空气质量："+Bean.getAqi().getCity().getAqi());
+        }else {
+            aeration.setText("暂无数据");
+        }
         city.setText(Bean.getBasic().getCity());
+        if (Bean.getSuggestion().getComf().getTxt()!=null){
+            tv_content.setText(Bean.getSuggestion().getComf().getTxt());
+        }else {
+            tv_content.setText("暂无数据");
+        }
+       if (Bean.getDaily_forecast().get(0).getAstro().getSr()!=null){
+           tv_sr.setText("日出时间："+Bean.getDaily_forecast().get(0).getAstro().getSr());
+       }else {
+           tv_sr.setText("暂无数据");
+       }if (Bean.getDaily_forecast().get(0).getAstro().getSs()!=null){
+            tv_ss.setText("日落时间："+Bean.getDaily_forecast().get(0).getAstro().getSs());
+        }else {
+            tv_ss.setText("暂无数据");
+        }
+        infoToday.setImageResource(SetImageView.setImage(Bean.getDaily_forecast().get(0).getCond().getTxt_d()));
+        infoTomorrow.setImageResource(SetImageView.setImage(Bean.getDaily_forecast().get(1).getCond().getTxt_d()));
+        temperatureRange.setText(Bean.getDaily_forecast().get(0).getTmp().getMin()+"°"+"～"+Bean.getDaily_forecast().get(0).getTmp().getMax()+"°");
+        temperatureRangeT.setText(Bean.getDaily_forecast().get(1).getTmp().getMin()+"°"+"～"+Bean.getDaily_forecast().get(1).getTmp().getMax()+"°");
         String []day1=Bean.getDaily_forecast().get(0).getDate().split("-");
         String []day2=Bean.getDaily_forecast().get(1).getDate().split("-");
         String []day3=Bean.getDaily_forecast().get(2).getDate().split("-");

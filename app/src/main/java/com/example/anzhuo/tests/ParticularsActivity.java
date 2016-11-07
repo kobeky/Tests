@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,7 +24,6 @@ import java.util.List;
  */
 public class ParticularsActivity extends AppCompatActivity {
     ImageView back;
-    ImageView particulars;
     TextView city;
     ParticularsFragment particularsFragment;
     Weather weather;
@@ -40,7 +40,6 @@ public class ParticularsActivity extends AppCompatActivity {
 setContentView(R.layout.particulars_layout);
         time = new ArrayList<>();
         back= (ImageView) findViewById(R.id.particulars_iv_back);
-        particulars= (ImageView) findViewById(R.id.particulars_ib);
         city= (TextView) findViewById(R.id.particulars_tv_city);
         viewPager= (ViewPager) findViewById(R.id.viewPager);
         tabLayout= (TabLayout) findViewById(R.id.tab_title);
@@ -50,6 +49,12 @@ setContentView(R.layout.particulars_layout);
         String name=intent.getStringExtra("cityName");
         city.setText(name);
         weather.setWeather(handler,name);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 

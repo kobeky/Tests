@@ -25,6 +25,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
     RelativeLayout me_RelativeLayout_Set;
     RelativeLayout me_RelativeLayout_Login;
     com.facebook.drawee.view.SimpleDraweeView me_iv_HeadPortrait;
+    Intent intent;
 
     @Nullable
     @Override
@@ -36,7 +37,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         me_RelativeLayout_Set = (RelativeLayout) view.findViewById(R.id.me_RelativeLayout_Set);
         me_tv_login = (TextView) view.findViewById(R.id.me_tv_login);
         me_iv_HeadPortrait = (SimpleDraweeView) view.findViewById(R.id.me_iv_HeadPortrait);
-        me_RelativeLayout_Login= (RelativeLayout) view.findViewById(R.id.me_RelativeLayout_Login);
+        me_RelativeLayout_Login = (RelativeLayout) view.findViewById(R.id.me_RelativeLayout_Login);
 
 
         me_RelativeLayout_Login.setOnClickListener(this);
@@ -46,7 +47,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 && getArguments().getString("b") != null && !getArguments().getString("b").equals("")) {
             me_tv_login.setText(getArguments().getString("a").toString());
             me_iv_HeadPortrait.setImageURI(Uri.parse(getArguments().getString("b").toString()));
-        }else if(getArguments().getString("nick") != null&&!getArguments().getString("nick").equals("")){
+        } else if (getArguments().getString("nick") != null && !getArguments().getString("nick").equals("")) {
             me_tv_login.setText(getArguments().getString("nick").toString());
         }
         return view;
@@ -58,12 +59,15 @@ public class MeFragment extends Fragment implements View.OnClickListener {
             case R.id.me_RelativeLayout_Login:
                 Intent i = new Intent(getContext().getApplicationContext(), UserLogin.class);
                 startActivity(i);
-                getActivity().finish();
-                break;
-            case R.id.me_RelativeLayout_Timing:
 
                 break;
+            case R.id.me_RelativeLayout_Timing:
+                intent = new Intent(getContext().getApplicationContext(),Timing_Activity.class);
+                startActivity(intent);
+                break;
             case R.id.me_RelativeLayout_Set:
+                intent=new Intent(getContext().getApplicationContext(),Inform_Activity.class);
+                startActivity(intent);
                 break;
         }
     }

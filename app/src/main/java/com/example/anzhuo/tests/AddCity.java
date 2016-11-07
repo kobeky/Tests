@@ -23,7 +23,7 @@ import java.util.Map;
 public class AddCity extends AppCompatActivity {
     ImageButton iv_back;
     GridView gridView;
-    String []city={"上海","北京","广州","深圳","厦门","杭州","南京","苏州","三亚","张家口","石家庄","哈尔滨","沈阳","郑州","合肥","南昌","长沙","太原","佛山","宜昌","九江","福州","济南","青岛","重庆","成都","昆明","大理","无锡","襄阳"};
+    String []city={"上海","北京","广州","深圳","厦门","杭州","南京","苏州","三亚","张家口","石家庄","哈尔滨","沈阳","郑州","合肥","南昌","长沙","太原","佛山","宜昌","九江","福州","济南","青岛","重庆","成都","昆明","武汉","无锡","洛阳"};
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

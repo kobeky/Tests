@@ -13,8 +13,8 @@
             android:id="@+id/timing_ib_Retrun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00000000"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/back"
+            android:background="@null" />
 
         <TextView
             android:layout_width="0dp"
@@ -39,17 +39,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:text="8:00"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/timing_tv_Week1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/timing_tv_Time1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="星期"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
         <ToggleButton
             android:id="@+id/timing_tb_Switch1"
@@ -76,17 +66,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:text="时间"
-            android:textSize="15sp" />
+            android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/timing_tv_Week2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/timing_tv_Time2"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="星期"
-            android:textSize="15sp" />
 
         <ToggleButton
             android:id="@+id/timing_tb_Switch2"
@@ -110,11 +91,12 @@
     <ImageButton
         android:id="@+id/timing_ib_New"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_above="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:background="#00000000"
-        android:src="@mipmap/ic_launcher" />
+        android:checked="false"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:src="@drawable/message_add_background" />
 
     <TextView
         android:id="@+id/textView"

@@ -15,7 +15,7 @@
 
     <RadioGroup
         android:id="@+id/main_rg_group"
-        android:background="#515151"
+        android:background="#10000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
